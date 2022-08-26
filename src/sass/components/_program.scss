@@ -1,0 +1,247 @@
+.program {
+  min-width: 320px;
+
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: var(--primary-color);
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+  }
+  @media screen and (min-width: 1440px) {
+    padding-top: 120px;
+  }
+}
+
+.program__title {
+  margin-bottom: 30px;
+  color: var(--primary-light);
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 26px;
+    margin-bottom: 52px;
+    text-align: left;
+  }
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    font-size: 46px;
+    margin-bottom: 58px;
+  }
+}
+
+.program-list,
+.program-semestr__list,
+.program-details__list {
+  list-style-type: none;
+}
+.program-list {
+  position: relative;
+  width: 176px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.program-list {
+  @media screen and(min-width:768px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1440px) {
+    display: flex;
+  }
+}
+
+.program-list::after {
+  content: '';
+  background-size: contain;
+  width: 120px;
+  height: 137px;
+  position: absolute;
+  top: 97%;
+  left: 72%;
+  background-image: url(/src/images/program/students-mob.png);
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(/src/images/program/students-mob@2x.png);
+  }
+
+  @media screen and (min-width: 768px) {
+    content: '';
+    background-image: url(/src/images/program/students-tab.png);
+    width: 374px;
+    height: 273px;
+    top: 75%;
+    left: 50%;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/program/students-tab@2x.png);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    content: '';
+    background-image: url(/src/images/program/students-desk.png);
+    width: 672px;
+    height: 502px;
+    top: 70%;
+    left: -13%;
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/program/students-desk@2x.png);
+    }
+  }
+}
+
+.program-list__title {
+  margin-bottom: 5px;
+  color: var(--primary-light);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 25px;
+    font-size: 30px;
+    line-height: 0.93;
+  }
+}
+.program-list__item {
+  position: relative;
+  padding-left: 32px;
+
+  @media screen and(min-width:768px) {
+    padding-left: 52px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 0;
+    padding-top: 64px;
+    width: 226px;
+
+    &:not(:last-child) {
+      margin-right: 46px;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 40px;
+
+    @media screen and(min-width:768px) {
+      margin-bottom: 30px;
+    }
+    @media screen and(min-width:1440px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.program-list__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+
+  width: 3px;
+  height: calc(100% + 40px);
+  background-color: var(--primary-light);
+
+  @media screen and(min-width:768px) {
+    height: calc(100% + 30px);
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 5px;
+    // width: calc(100% + 630px);
+    width: 100vw;
+    left: 50%;
+    height: 3px;
+    transform: translateX(-50%);
+  }
+}
+.program-list__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: 100;
+
+  @media screen and (min-width: 1440px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.program-semestr__list {
+  @media screen and(min-width:768px) {
+    display: flex;
+  }
+  @media screen and (min-width: 1440px) {
+    display: block;
+    align-items: center;
+  }
+}
+.program-semestr__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.program-semestr__title {
+  margin-bottom: 5px;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.65;
+
+  letter-spacing: 0.08em;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+.program-semestr__title::before {
+  content: '— ';
+  color: var(--accent-color);
+}
+.program-details__list {
+  @media screen and(min-width:768px) {
+    width: 150px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+  }
+  @media screen and(min-width:1440px) {
+    width: 226px;
+    margin-right: 46px;
+  }
+}
+
+.program-details__text {
+  color: var(--primary-text-color);
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 1.56;
+  }
+}
